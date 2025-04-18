@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>REACH Farmers Market</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="arf.css" />
+    <script src="d3.v3.min.js"></script>
+
+    <!-- Inline Academic Theme Styling -->
+    <style>
+      body {
+        font-family: 'Georgia', serif;
+        background-color: #f5f7fa;
+        color: #2c3e50;
+        margin: 0;
+        padding: 0;
+      }
+
+      #header {
+        background-color: #1a237e;
+        color: white;
+        padding: 20px;
+        font-size: 28px;
+        font-weight: bold;
+        text-align: center;
+        border-bottom: 4px solid #0d47a1;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      #body {
+        padding: 30px;
+        max-width: 1100px;
+        margin: auto;
+      }
+
+      .legend {
+        margin-top: 60px;
+        padding: 20px;
+        background-color: #e3eaf5;
+        border-left: 5px solid #3949ab;
+        font-size: 16px;
+        line-height: 1.6;
+        max-width: 1100px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 40px;
+      }
+
+      hr {
+        border: none;
+        height: 2px;
+        background-color: #3949ab;
+        margin: 20px 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="header">
+      REACH Farmers Market
+    </div>
+
+    <div id="body">
+      <!-- D3 will populate this area if needed -->
+    </div>
+
+    <!-- D3-based Interactive Script -->
+    <script src="arf.js"></script>
+
+    <!-- Academic Description at the Bottom -->
+    <div class="legend">
+      Welcome to the REACH Farmers Market Visualization Portal. Explore structured operations, vendor workflows, and attendee processes within an organized framework built using D3.js.
+    </div>
+  </body>
+</html>

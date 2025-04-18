@@ -1,0 +1,160 @@
+{
+    "name": "Market System",
+    "type": "folder",
+    "children": [
+      {
+        "name": "PGL",
+        "type": "folder",
+        "children": [
+          {
+            "name": "Manage Farmers Market Operations",
+            "type": "folder",
+            "children": [
+              {
+                "name": "Equipment Rental Form",
+                "type": "form"
+              },
+              {
+                "name": "Attendee Registration Form",
+                "type": "form"
+              },
+              {
+                "name": "CSA Distribution Form",
+                "type": "form"
+              },
+              {
+                "name": "Vendor Check-in Form",
+                "type": "form"
+              }
+            ]
+          },
+          {
+            "name": "Distribute Funds to Vendors",
+            "type": "folder",
+            "children": [
+              {
+                "name": "Payment Redemption Form",
+                "type": "form"
+              }
+            ]
+          },
+          {
+            "name": "Monitor Market Metrics",
+            "type": "folder",
+            "children": [
+              {
+                "name": "Planning & Decision Making",
+                "type": "task"
+              },
+              {
+                "name": "Reporting to Funders",
+                "type": "task"
+              }
+            ]
+          },
+          {
+            "name": "Internal Operations related to the Market",
+            "type": "task"
+          }
+        ]
+      },
+      {
+        "name": "Vendors",
+        "type": "folder",
+        "children": [
+          {
+            "name": "Registration & Setup",
+            "type": "folder",
+            "children": [
+              {
+                "name": "Market Vendor Request Form",
+                "type": "form"
+              }
+            ]
+          },
+          {
+            "name": "Week to Week Updates",
+            "type": "folder",
+            "children": [
+              {
+                "name": "Upcoming Market Form",
+                "type": "form"
+              }
+            ]
+          },
+          {
+            "name": "Transactions at Market",
+            "type": "folder",
+            "children": [
+              {
+                "name": "Transaction Form",
+                "type": "form"
+              }
+            ]
+          },
+          {
+            "name": "Payment Reconciliation",
+            "type": "folder",
+            "children": [
+              {
+                "name": "End of Market Form",
+                "type": "form"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "REACH",
+        "type": "folder",
+        "children": [
+          {
+            "name": "Ensure Compliance & Reporting -- REACH",
+            "type": "task"
+          }
+        ]
+      },
+      {
+        "name": "Market Attendee",
+        "type": "folder",
+        "children": [
+          {
+            "name": "Register at Farmers Market",
+            "type": "folder",
+            "children": [
+              {
+                "name": "Register Form",
+                "type": "form"
+              },
+              {
+                "name": "Market Form",
+                "type": "form"
+              },
+              {
+                "name": "Attendee Form",
+                "type": "form"
+              }
+            ]
+          },
+          {
+            "name": "Receive Token for Produce Purchase",
+            "type": "task"
+            
+          },
+          {
+            "name": "Vendor Stall Transaction (Token & QR Code)",
+            "type": "task"
+          },
+          {
+            "name": "Provide Feedback on Market Experience",
+            "type": "task"
+          },
+          {
+            "name": "Entertainment & Education",
+            "type": "task"
+          }
+        ]
+      }
+    ]
+  }
+  
