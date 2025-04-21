@@ -1,160 +1,276 @@
 {
-    "name": "Market System",
-    "type": "folder",
-    "children": [
-      {
-        "name": "PGL",
-        "type": "folder",
-        "children": [
-          {
-            "name": "Manage Farmers Market Operations",
-            "type": "folder",
-            "children": [
-              {
-                "name": "Equipment Rental Form",
-                "type": "form"
-              },
-              {
-                "name": "Attendee Registration Form",
-                "type": "form"
-              },
-              {
-                "name": "CSA Distribution Form",
-                "type": "form"
-              },
-              {
-                "name": "Vendor Check-in Form",
-                "type": "form"
-              }
-            ]
-          },
-          {
-            "name": "Distribute Funds to Vendors",
-            "type": "folder",
-            "children": [
-              {
-                "name": "Payment Redemption Form",
-                "type": "form"
-              }
-            ]
-          },
-          {
-            "name": "Monitor Market Metrics",
-            "type": "folder",
-            "children": [
-              {
-                "name": "Planning & Decision Making",
-                "type": "task"
-              },
-              {
-                "name": "Reporting to Funders",
-                "type": "task"
-              }
-            ]
-          },
-          {
-            "name": "Internal Operations related to the Market",
-            "type": "task"
-          }
-        ]
-      },
-      {
-        "name": "Vendors",
-        "type": "folder",
-        "children": [
-          {
-            "name": "Registration & Setup",
-            "type": "folder",
-            "children": [
-              {
-                "name": "Market Vendor Request Form",
-                "type": "form"
-              }
-            ]
-          },
-          {
-            "name": "Week to Week Updates",
-            "type": "folder",
-            "children": [
-              {
-                "name": "Upcoming Market Form",
-                "type": "form"
-              }
-            ]
-          },
-          {
-            "name": "Transactions at Market",
-            "type": "folder",
-            "children": [
-              {
-                "name": "Transaction Form",
-                "type": "form"
-              }
-            ]
-          },
-          {
-            "name": "Payment Reconciliation",
-            "type": "folder",
-            "children": [
-              {
-                "name": "End of Market Form",
-                "type": "form"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "REACH",
-        "type": "folder",
-        "children": [
-          {
-            "name": "Ensure Compliance & Reporting -- REACH",
-            "type": "task"
-          }
-        ]
-      },
-      {
-        "name": "Market Attendee",
-        "type": "folder",
-        "children": [
-          {
-            "name": "Register at Farmers Market",
-            "type": "folder",
-            "children": [
-              {
-                "name": "Register Form",
-                "type": "form"
-              },
-              {
-                "name": "Market Form",
-                "type": "form"
-              },
-              {
-                "name": "Attendee Form",
-                "type": "form"
-              }
-            ]
-          },
-          {
-            "name": "Receive Token for Produce Purchase",
-            "type": "task"
-            
-          },
-          {
-            "name": "Vendor Stall Transaction (Token & QR Code)",
-            "type": "task"
-          },
-          {
-            "name": "Provide Feedback on Market Experience",
-            "type": "task"
-          },
-          {
-            "name": "Entertainment & Education",
-            "type": "task"
-          }
-        ]
-      }
-    ]
-  }
-  
+  "name": "Market System",
+  "group": "PGL",
+  "type": "folder",
+  "description": "Top-level system representing the entire Farmers Market dashboard.",
+  "children": [
+    {
+      "name": "PGL",
+      "group": "PGL",
+      "type": "folder",
+      "description": "PGL is responsible for overseeing operations, payments, and monitoring.",
+      "children": [
+        {
+          "name": "Internal Operations related to the Market",
+          "group": "PGL",
+          "type": "folder",
+          "description": "Tasks and forms that PGL uses to manage daily internal functions.",
+          "children": [
+            {
+              "name": "Equipment Rental Form",
+              "group": "PGL",
+              "type": "form",
+              "description": "Used to track and approve market equipment rental."
+            },
+            {
+              "name": "Attendee Registration Form",
+              "group": "PGL",
+              "type": "form",
+              "description": "Used to collect details of attendees for planning and reporting."
+            },
+            {
+              "name": "CSA Distribution Form",
+              "group": "PGL",
+              "type": "form",
+              "description": "Captures details about Community Supported Agriculture distributions."
+            },
+            {
+              "name": "Vendor Check-in Form",
+              "group": "PGL",
+              "type": "form",
+              "description": "Records vendor arrival and setup at the market."
+            }
+          ]
+        },
+        {
+          "name": "Remits Payment to Vendors",
+          "group": "PGL",
+          "type": "folder",
+          "description": "Handles financial transactions between PGL and vendors.",
+          "children": [
+            {
+              "name": "Payment Redemption Form",
+              "group": "PGL",
+              "type": "form",
+              "description": "Used by PGL to confirm and process payments to vendors."
+            }
+          ]
+        },
+        {
+          "name": "Monitor Market Metrics",
+          "group": "PGL",
+          "type": "folder",
+          "description": "Monitors key market indicators and generates insights.",
+          "children": [
+            {
+              "name": "Planning & Decision Making",
+              "group": "PGL",
+              "type": "task",
+              "description": "Uses metrics to guide planning and improve decision-making."
+            },
+            {
+              "name": "Reporting to Funders",
+              "group": "PGL",
+              "type": "task",
+              "description": "Summarizes performance for stakeholders and funders."
+            }
+          ]
+        },
+        {
+          "name": "Internal Operations related to the Market",
+          "group": "PGL",
+          "type": "task",
+          "description": "General administrative tasks handled internally by PGL."
+        }
+      ]
+    },
+    {
+      "name": "Vendors",
+      "group": "Vendors",
+      "type": "folder",
+      "description": "Vendors provide goods and services at the market.",
+      "children": [
+        {
+          "name": "Registration & Setup",
+          "group": "Vendors",
+          "type": "folder",
+          "description": "Initial setup and registration before participation.",
+          "children": [
+            {
+              "name": "Market Vendor Request Form",
+              "group": "Vendors",
+              "type": "form",
+              "description": "Allows vendors to register for upcoming markets."
+            }
+          ]
+        },
+        {
+          "name": "Week to Week Updates",
+          "group": "Vendors",
+          "type": "folder",
+          "description": "Weekly operational updates from vendors.",
+          "children": [
+            {
+              "name": "Upcoming Market Form",
+              "group": "Vendors",
+              "type": "form",
+              "description": "Vendors indicate participation for the upcoming week."
+            }
+          ]
+        },
+        {
+          "name": "Transactions at Market",
+          "group": "Vendors",
+          "type": "folder",
+          "description": "Tracks transactions made during the market.",
+          "children": [
+            {
+              "name": "Transaction Form",
+              "group": "Vendors",
+              "type": "form",
+              "description": "Logs sales and services performed by vendors."
+            }
+          ]
+        },
+        {
+          "name": "Payment Reconciliation",
+          "group": "Vendors",
+          "type": "folder",
+          "description": "Handles end-of-day financial reconciliations.",
+          "children": [
+            {
+              "name": "End of Market Form",
+              "group": "Vendors",
+              "type": "form",
+              "description": "Captures total sales and payment method summaries."
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "name": "Funders",
+      "group": "Funders",
+      "type": "folder",
+      "description": "Entities that provide financial support and regulatory oversight for market activities.",
+      "children": [
+        {
+          "name": "REACH",
+          "group": "Funders",
+          "type": "folder",
+          "description": "REACH provides funding for health equity and food access programs.",
+          "children": [
+            {
+              "name": "Remit Payment & Review Invoice",
+              "group": "Funders",
+              "type": "task",
+              "description": "REACH processes invoices and releases payment for applicable market programs."
+            }
+          ]
+        },
+        {
+          "name": "Wallace Clinic",
+          "group": "Funders",
+          "type": "folder",
+          "description": "Wallace Clinic provides funding for health equity and food access programs.",
+          "children": [
+            {
+              "name": "Remit Payment & Review Invoice",
+              "group": "Funders",
+              "type": "task",
+              "description": "Wallace Clinic reimburses vendors and reviews submitted financial forms."
+            }
+          ]
+        },
+        {
+          "name": "Oregon Food Bank",
+          "group": "Funders",
+          "type": "folder",
+          "description": "Oregon Food Bank provides funding for health equity and food access programs.",
+          "children": [
+            {
+              "name": "Remit Payment & Review Invoice",
+              "group": "Funders",
+              "type": "task",
+              "description": "Processes payment and compliance checks for food security programs."
+            }
+          ]
+        },
+        {
+          "name": "Oregon Department of Agriculture",
+          "group": "Funders",
+          "type": "folder",
+          "description": "Oregon Department of Agriculture provides funding for health equity and food access programs.",
+          "children": [
+            {
+              "name": "Remit Payment & Review Invoice",
+              "group": "Funders",
+              "type": "task",
+              "description": "Handles invoice processing and ensures compliance with agricultural policies."
+            }
+          ]
+        }
+      ]
+    },
+    
+    {
+      "name": "Market Attendee",
+      "group": "Market Attendee",
+      "type": "folder",
+      "description": "Market visitors who register, purchase, and engage with the market.",
+      "children": [
+        {
+          "name": "Register at Farmers Market",
+          "group": "Market Attendee",
+          "type": "folder",
+          "description": "First step for attendees to participate in the market.",
+          "children": [
+            {
+              "name": "Register Form",
+              "group": "Market Attendee",
+              "type": "form",
+              "description": "Used by new attendees to enroll in the system."
+            },
+            {
+              "name": "Market Form",
+              "group": "Market Attendee",
+              "type": "form",
+              "description": "Captures attendee interest and market participation."
+            },
+            {
+              "name": "Attendee Form",
+              "group": "Market Attendee",
+              "type": "form",
+              "description": "Records individual-level market experience data."
+            }
+          ]
+        },
+        {
+          "name": "Receive Token for Produce Purchase",
+          "group": "Market Attendee",
+          "type": "task",
+          "description": "Attendees receive tokens to exchange for fresh produce."
+        },
+        {
+          "name": "Vendor Stall Transaction (Token & QR Code)",
+          "group": "Market Attendee",
+          "type": "task",
+          "description": "Transactions made using tokens or QR codes at vendor stalls."
+        },
+        {
+          "name": "Provide Feedback on Market Experience",
+          "group": "Market Attendee",
+          "type": "task",
+          "description": "Feedback collection to improve market services and experience."
+        },
+        {
+          "name": "Entertainment & Education",
+          "group": "Market Attendee",
+          "type": "task",
+          "description": "Activities provided for enrichment and awareness at the market."
+        }
+      ]
+    }
+  ]
+}
