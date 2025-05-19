@@ -1,4 +1,4 @@
-var margin = [20, 120, 20, 140],
+var margin = [20, 120, 20, 200],
     width = 1280 - margin[1] - margin[3],
     height = 800 - margin[0] - margin[2],
     i = 0,
@@ -88,19 +88,33 @@ function update(source) {
         return d._children ? (groupColors[d.group] || "lightsteelblue") : "#fff";
       });
 
-  // Node text (clickable if url exists)
-  nodeEnter.append('a')
-      .attr("target", "_blank")
-      .attr('xlink:href', function(d) { return d.url || null; })
-      .append("svg:text")
-      .attr("x", function(d) { return d.children || d._children ? -10 : 10; })
-      .attr("dy", ".35em")
-      .attr("text-anchor", function(d) {
-        return d.children || d._children ? "end" : "start";
-      })
-      .text(function(d) { return d.name; })
-      .style("fill", "black")
-      .style("fill-opacity", 1e-6);
+    // Node text (password-protected hyperlink appearance)
+  nodeEnter.append("svg:text")
+  .attr("x", function(d) { return d.children || d._children ? -10 : 10; })
+  .attr("dy", ".35em")
+  .attr("text-anchor", function(d) {
+    return d.children || d._children ? "end" : "start";
+  })
+  .text(function(d) { return d.name; })
+  .style("fill", function(d) { return d.url ? "blue" : "black"; }) // Blue if it's a link
+  .style("text-decoration", function(d) { return d.url ? "underline" : "none"; }) // Underline if it's a link
+  .style("fill-opacity", 1e-6)
+  .style("cursor", function(d) { return d.url ? "pointer" : "default"; })
+  .on("click", function(d) {
+    if (d.url) {
+      var input = prompt("Enter password to access this link:");
+      if (input === "123") {
+        window.open(d.url, "_blank");
+      } else {
+        alert("Incorrect password.");
+      }
+      d3.event.stopPropagation();
+    } else {
+      toggle(d);
+      update(d);
+    }
+  });
+
 
   // Tooltip for description
   nodeEnter.append("svg:title")

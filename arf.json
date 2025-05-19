@@ -1,276 +1,618 @@
 {
-  "name": "Market System",
+  "name": "The PMDS Market System",
   "group": "PGL",
   "type": "folder",
-  "description": "Top-level system representing the entire Farmers Market dashboard.",
+  "description": "Top-level node representing the PMDS Market System.",
   "children": [
     {
-      "name": "PGL",
+      "name": "System Users",
       "group": "PGL",
       "type": "folder",
-      "description": "PGL is responsible for overseeing operations, payments, and monitoring.",
+      "description": "Defines various users interacting with PMDS.",
       "children": [
         {
-          "name": "Internal Operations related to the Market",
+          "name": "Market Manager (PGL)",
           "group": "PGL",
           "type": "folder",
-          "description": "Tasks and forms that PGL uses to manage daily internal functions.",
+          "description": "Individuals involved in managing the market operations under PGL.",
           "children": [
             {
-              "name": "Equipment Rental Form",
+              "name": "PGL staff",
               "group": "PGL",
-              "type": "form",
-              "description": "Used to track and approve market equipment rental."
+              "type": "user",
+              "description": "Core staff members managing daily tasks and logistics."
             },
             {
-              "name": "Attendee Registration Form",
+              "name": "PGL volunteers",
               "group": "PGL",
-              "type": "form",
-              "description": "Used to collect details of attendees for planning and reporting."
+              "type": "user",
+              "description": "Volunteers assisting in various operational roles at the market."
             },
             {
-              "name": "CSA Distribution Form",
+              "name": "PGL leadership (Germaine and Brittany)",
               "group": "PGL",
-              "type": "form",
-              "description": "Captures details about Community Supported Agriculture distributions."
+              "type": "user",
+              "description": "Senior leaders providing oversight and strategic direction."
+            }
+          ]
+        },
+        {
+          "name": "Market Vendors (all)",
+          "group": "Vendors",
+          "type": "folder",
+          "description": "All vendors who participate and sell goods/services at the market.",
+          "children": [
+            {
+              "name": "Farmers",
+              "group": "Vendors",
+              "type": "user",
+              "description": "Vendors who grow and sell fresh produce."
             },
             {
-              "name": "Vendor Check-in Form",
-              "group": "PGL",
-              "type": "form",
-              "description": "Records vendor arrival and setup at the market."
-            }
-          ]
-        },
-        {
-          "name": "Remits Payment to Vendors",
-          "group": "PGL",
-          "type": "folder",
-          "description": "Handles financial transactions between PGL and vendors.",
-          "children": [
-            {
-              "name": "Payment Redemption Form",
-              "group": "PGL",
-              "type": "form",
-              "description": "Used by PGL to confirm and process payments to vendors."
-            }
-          ]
-        },
-        {
-          "name": "Monitor Market Metrics",
-          "group": "PGL",
-          "type": "folder",
-          "description": "Monitors key market indicators and generates insights.",
-          "children": [
-            {
-              "name": "Planning & Decision Making",
-              "group": "PGL",
-              "type": "task",
-              "description": "Uses metrics to guide planning and improve decision-making."
+              "name": "Value-added producers",
+              "group": "Vendors",
+              "type": "user",
+              "description": "Vendors offering processed or packaged agricultural goods."
             },
             {
-              "name": "Reporting to Funders",
-              "group": "PGL",
-              "type": "task",
-              "description": "Summarizes performance for stakeholders and funders."
+              "name": "Hot food vendors",
+              "group": "Vendors",
+              "type": "user",
+              "description": "Vendors selling prepared and ready-to-eat meals."
+            },
+            {
+              "name": "Educators",
+              "group": "Vendors",
+              "type": "user",
+              "description": "Individuals or groups providing educational content at the market."
+            },
+            {
+              "name": "Entertainers",
+              "group": "Vendors",
+              "type": "user",
+              "description": "Artists and performers contributing to the market’s atmosphere."
             }
           ]
         },
         {
-          "name": "Internal Operations related to the Market",
-          "group": "PGL",
-          "type": "task",
-          "description": "General administrative tasks handled internally by PGL."
-        }
-      ]
-    },
-    {
-      "name": "Vendors",
-      "group": "Vendors",
-      "type": "folder",
-      "description": "Vendors provide goods and services at the market.",
-      "children": [
-        {
-          "name": "Registration & Setup",
-          "group": "Vendors",
+          "name": "Market Funders",
+          "group": "Funders",
           "type": "folder",
-          "description": "Initial setup and registration before participation.",
+          "description": "Entities providing financial and strategic support for the market.",
           "children": [
             {
-              "name": "Market Vendor Request Form",
-              "group": "Vendors",
-              "type": "form",
-              "description": "Allows vendors to register for upcoming markets."
-            }
-          ]
-        },
-        {
-          "name": "Week to Week Updates",
-          "group": "Vendors",
-          "type": "folder",
-          "description": "Weekly operational updates from vendors.",
-          "children": [
+              "name": "REACH",
+              "group": "Funders",
+              "type": "user",
+              "description": "Funds initiatives related to health equity and food access."
+            },
             {
-              "name": "Upcoming Market Form",
-              "group": "Vendors",
-              "type": "form",
-              "description": "Vendors indicate participation for the upcoming week."
-            }
-          ]
-        },
-        {
-          "name": "Transactions at Market",
-          "group": "Vendors",
-          "type": "folder",
-          "description": "Tracks transactions made during the market.",
-          "children": [
+              "name": "Wallace Clinic",
+              "group": "Funders",
+              "type": "user",
+              "description": "Supports health and community wellness through funding."
+            },
             {
-              "name": "Transaction Form",
-              "group": "Vendors",
-              "type": "form",
-              "description": "Logs sales and services performed by vendors."
-            }
-          ]
-        },
-        {
-          "name": "Payment Reconciliation",
-          "group": "Vendors",
-          "type": "folder",
-          "description": "Handles end-of-day financial reconciliations.",
-          "children": [
+              "name": "Outgrowing Hunger/Oregon Food Bank",
+              "group": "Funders",
+              "type": "user",
+              "description": "Provides resources and funding to address food insecurity."
+            },
             {
-              "name": "End of Market Form",
-              "group": "Vendors",
-              "type": "form",
-              "description": "Captures total sales and payment method summaries."
+              "name": "Oregon Department of Agriculture",
+              "group": "Funders",
+              "type": "user",
+              "description": "Supports agricultural development and regulatory oversight."
             }
           ]
         }
       ]
     },
-
     {
-      "name": "Funders",
-      "group": "Funders",
+      "name": "System Components",
+      "group": "PGL",
       "type": "folder",
-      "description": "Entities that provide financial support and regulatory oversight for market activities.",
+      "description": "Breakdown of major technical and operational components of PMDS.",
       "children": [
         {
-          "name": "REACH",
-          "group": "Funders",
-          "type": "folder",
-          "description": "REACH provides funding for health equity and food access programs.",
-          "children": [
-            {
-              "name": "Remit Payment & Review Invoice",
-              "group": "Funders",
-              "type": "task",
-              "description": "REACH processes invoices and releases payment for applicable market programs."
-            }
-          ]
+          "name": "Data input forms",
+          "group": "PGL",
+          "type": "component",
+          "description": "Forms used to collect, submit, and manage data from vendors, managers, and attendees."
         },
         {
-          "name": "Wallace Clinic",
-          "group": "Funders",
+          "name": "Dashboards Sets and Dashboards",
+          "group": "PGL",
           "type": "folder",
-          "description": "Wallace Clinic provides funding for health equity and food access programs.",
+          "description": "Visual analytics and report interfaces for various user groups.",
           "children": [
             {
-              "name": "Remit Payment & Review Invoice",
-              "group": "Funders",
-              "type": "task",
-              "description": "Wallace Clinic reimburses vendors and reviews submitted financial forms."
-            }
-          ]
-        },
-        {
-          "name": "Oregon Food Bank",
-          "group": "Funders",
-          "type": "folder",
-          "description": "Oregon Food Bank provides funding for health equity and food access programs.",
-          "children": [
+              "name": "Shared Dashboard Set",
+              "group": "PGL",
+              "type": "folder",
+              "description": "Dashboards shared across users for general reporting and status overview.",
+              "children": [
+                {
+                  "name": "Benefit Utilization Dashboard",
+                  "group": "PGL",
+                  "type": "dashboard",
+                  "description": "Displays data on how benefits such as SNAP are being utilized across the market."
+                },
+                {
+                  "name": "Market Attendance Dashboard",
+                  "group": "PGL",
+                  "type": "dashboard",
+                  "description": "Visualizes attendance patterns of various market participants over time."
+                },
+                {
+                  "name": "General Dashboard",
+                  "group": "PGL",
+                  "type": "dashboard",
+                  "description": "A summary view with key metrics for overall market performance."
+                },
+                {
+                  "name": "Invoice and Remittance Dashboard",
+                  "group": "PGL",
+                  "type": "dashboard",
+                  "description": "Tracks invoices submitted and payments made to vendors and funders."
+                },
+                {
+                  "name": "Market Sales Dashboard",
+                  "group": "PGL",
+                  "type": "dashboard",
+                  "description": "Breaks down sales figures by vendor, product type, and payment method."
+                },
+                {
+                  "name": "Vendor Information Dashboard",
+                  "group": "PGL",
+                  "type": "dashboard",
+                  "description": "Displays contact, participation, and history information for vendors."
+                }
+              ]
+            },
+            
             {
-              "name": "Remit Payment & Review Invoice",
-              "group": "Funders",
-              "type": "task",
-              "description": "Processes payment and compliance checks for food security programs."
+              "name": "Contract Dashboard Set",
+              "group": "PGL",
+              "type": "folder",
+              "description": "Dashboards specific to contract performance and metrics reporting.",
+              "children": [
+                {
+                  "name": "Funder Invoice and Remittance Dashboard",
+                  "group": "Funders",
+                  "type": "dashboard",
+                  "description": "Tracks funder-specific invoicing and remittance activities."
+                },
+                {
+                  "name": "REACH-PGL Contract Dashboard",
+                  "group": "Funders",
+                  "type": "dashboard",
+                  "description": "Monitors contract milestones, deliverables, and metrics for REACH and PGL."
+                },
+                {
+                  "name": "CSA Dashboard",
+                  "group": "PGL",
+                  "type": "dashboard",
+                  "description": "Tracks participation and distribution metrics for the Community Supported Agriculture program."
+                }
+              ]
             }
-          ]
-        },
-        {
-          "name": "Oregon Department of Agriculture",
-          "group": "Funders",
-          "type": "folder",
-          "description": "Oregon Department of Agriculture provides funding for health equity and food access programs.",
-          "children": [
+            ,
             {
-              "name": "Remit Payment & Review Invoice",
-              "group": "Funders",
-              "type": "task",
-              "description": "Handles invoice processing and ensures compliance with agricultural policies."
+              "name": "Vendor Dashboard Set",
+              "group": "Vendors",
+              "type": "folder",
+              "description": "Dashboards tailored for vendor-facing metrics and internal PGL tracking needs.",
+              "children": [
+                {
+                  "name": "Item Sales Dashboard",
+                  "group": "Vendors",
+                  "type": "dashboard",
+                  "description": "Tracks quantity and type of items sold by vendors at each market."
+                },
+                {
+                  "name": "PGL Personnel Dashboard",
+                  "group": "PGL",
+                  "type": "dashboard",
+                  "description": "Displays information about PGL staff assignments, hours, and roles per market day."
+                },
+                {
+                  "name": "All PGL Contracts Dashboard",
+                  "group": "PGL",
+                  "type": "dashboard",
+                  "description": "Aggregates and tracks all contracts PGL is involved in across different programs and funders."
+                },
+                {
+                  "name": "Inventory Dashboard",
+                  "group": "Vendors",
+                  "type": "dashboard",
+                  "description": "Monitors current inventory levels and supply chain status for vendor goods."
+                }
+              ]
             }
+            
           ]
         }
       ]
     },
-    
     {
-      "name": "Market Attendee",
-      "group": "Market Attendee",
+      "name": "PMDS Use Features ",
+      "group": "PGL",
       "type": "folder",
-      "description": "Market visitors who register, purchase, and engage with the market.",
+      "description": "Non-functional Specifications",
       "children": [
         {
-          "name": "Register at Farmers Market",
-          "group": "Market Attendee",
-          "type": "folder",
-          "description": "First step for attendees to participate in the market.",
+          "name": "Notifications",
+          "group": "PGL",
+          "type": "feature",
+          "description": "Supports communication alerts and reminders for users of the system.",
           "children": [
             {
-              "name": "Register Form",
-              "group": "Market Attendee",
-              "type": "form",
-              "description": "Used by new attendees to enroll in the system."
+              "name": "Types of Notifications",
+              "group": "PGL",
+              "type": "category",
+              "description": "Different delivery channels for sending alerts.",
+              "children": [
+                {
+                  "name": "Email based",
+                  "group": "PGL",
+                  "type": "mode",
+                  "description": "Notifications sent to users via email for confirmations, updates, and reminders."
+                },
+                {
+                  "name": "Text based",
+                  "group": "PGL",
+                  "type": "mode",
+                  "description": "SMS notifications sent to users’ mobile devices for quick alerts."
+                }
+              ]
             },
             {
-              "name": "Market Form",
-              "group": "Market Attendee",
-              "type": "form",
-              "description": "Captures attendee interest and market participation."
+              "name": "Recipients of Notifications",
+              "group": "PGL",
+              "type": "category",
+              "description": "Defines who receives which types of notifications.",
+              "children": [
+                {
+                  "name": "PGL",
+                  "group": "PGL",
+                  "type": "recipient",
+                  "description": "Notifications targeted at market managers and administrative staff.",
+                  "children": [
+                    {
+                      "name": "CSA opening (email or text)",
+                      "group": "PGL",
+                      "type": "notification",
+                      "description": "Notifies when the CSA (Community Supported Agriculture) program opens."
+                    },
+                    {
+                      "name": "New vendor request submission (email or text)",
+                      "group": "PGL",
+                      "type": "notification",
+                      "description": "Alert sent when a new vendor registration is submitted."
+                    },
+                    {
+                      "name": "(include all – see Sid's Notification list)",
+                      "group": "PGL",
+                      "type": "notification",
+                      "description": "Placeholder to incorporate all additional notifications outlined in Sid’s list."
+                    }
+                  ]
+                },
+                {
+                  "name": "Vendor",
+                  "group": "Vendors",
+                  "type": "recipient",
+                  "description": "Notifications related to participation, transactions, or schedules.",
+                  "children": [
+                    {
+                      "name": "Outstanding documents due (email or text)",
+                      "group": "Vendors",
+                      "type": "notification",
+                      "description": "Reminds vendors to submit pending documentation."
+                    }
+                  ]
+                },
+                {
+                  "name": "Funder",
+                  "group": "Funders",
+                  "type": "recipient",
+                  "description": "Updates on reports, invoices, or funding milestones.",
+                  "children": [
+                    {
+                      "name": "Reminder to submit payment remittance form (email)",
+                      "group": "Funders",
+                      "type": "notification",
+                      "description": "Reminds funders to submit the remittance form via email."
+                    }
+                  ]
+                }
+              ]
+            }
+            
+          ]
+        },
+        {
+          "name": "Mobile Wallet",
+          "group": "PGL",
+          "type": "feature",
+          "description": "A digital solution that facilitates benefit tracking and transactions at the market.",
+          "children": [
+            {
+              "name": "For all market attendees",
+              "group": "PGL",
+              "type": "category",
+              "description": "Mobile Wallet is accessible to all individuals attending the market.",
+              "children": [
+                {
+                  "name": "New Attendees to the Market",
+                  "group": "PGL",
+                  "type": "user-category",
+                  "description": "Attendees who are participating in the market for the first time."
+                },
+                {
+                  "name": "Return Attendees to the Market",
+                  "group": "PGL",
+                  "type": "user-category",
+                  "description": "Individuals who have previously attended the market."
+                },
+                {
+                  "name": "Unregistered attendees",
+                  "group": "PGL",
+                  "type": "user-category",
+                  "description": "Attendees who have not formally registered through the system."
+                }
+              ]
             },
             {
-              "name": "Attendee Form",
-              "group": "Market Attendee",
-              "type": "form",
-              "description": "Records individual-level market experience data."
+              "name": "Tracks balances of all benefits by attendee family (Neighbor ID):",
+              "group": "PGL",
+              "type": "category",
+              "description": "Allows tracking of different benefit balances linked to family Neighbor ID.",
+              "children": [
+                {
+                  "name": "SNAP Bucks",
+                  "group": "PGL",
+                  "type": "benefit",
+                  "description": "Manually loaded for SNAP recipients who present their SNAP card and determine how much they want to spend; determines token allocation."
+                },
+                {
+                  "name": "Wallace Bucks",
+                  "group": "PGL",
+                  "type": "benefit",
+                  "description": "Autoloaded ($25) for designated Wallace clients."
+                },
+                {
+                  "name": "Community Bucks",
+                  "group": "PGL",
+                  "type": "benefit",
+                  "description": "Manually loaded for first 200 people to attend the market and receive the physical bucks while in line at the registration table."
+                },
+                {
+                  "name": "PGL Bucks",
+                  "group": "PGL",
+                  "type": "benefit",
+                  "description": "Manually loaded for those who bring physical PGL Bucks to the Market."
+                }
+              ]
+            },
+            {
+              "name": "Enables transactions with all vendors",
+              "group": "PGL",
+              "type": "category",
+              "description": "Supports various types of financial exchanges between attendees and vendors.",
+              "children": [
+                {
+                  "name": "Benefits based transactions",
+                  "group": "PGL",
+                  "type": "transaction",
+                  "description": "Transactions completed using market benefits such as SNAP, Wallace, or Community Bucks."
+                },
+                {
+                  "name": "Non-benefits based transactions (cash and/or card only)",
+                  "group": "PGL",
+                  "type": "transaction",
+                  "description": "Transactions conducted using cash, credit, or debit cards outside the benefit system."
+                },
+                {
+                  "name": "Benefits and Non-benefits based transactions combined",
+                  "group": "PGL",
+                  "type": "transaction",
+                  "description": "Transactions involving both benefit tokens and cash/card payments together."
+                }
+              ]
+            },
+            {
+              "name": "Invoicing and remittance",
+              "group": "PGL",
+              "type": "component",
+              "description": "Automates vendor payment tracking and enables funder invoicing tied to benefit usage."
             }
           ]
         },
         {
-          "name": "Receive Token for Produce Purchase",
-          "group": "Market Attendee",
-          "type": "task",
-          "description": "Attendees receive tokens to exchange for fresh produce."
+          "name": "Mobile App Interfaces ",
+          "group": "PGL",
+          "type": "feature",
+          "description": "for easy Vendor and Attendee information access",
+          "children": [
+            {
+              "name": "For vendors",
+              "group": "Vendors",
+              "type": "category",
+              "description": "Vendor-specific views and tools for mobile interaction.",
+              "children": [
+                {
+                  "name": "Vendor ID",
+                  "group": "Vendors",
+                  "type": "field",
+                  "description": "Unique identifier for each vendor used across forms and dashboards."
+                },
+                {
+                  "name": "Website link for quick access to forms and dashboards",
+                  "group": "Vendors",
+                  "type": "field",
+                  "description": "Direct link provided in the app to access required forms and performance dashboards."
+                }
+              ]
+            },
+            {
+              "name": "For attendees",
+              "group": "PGL",
+              "type": "category",
+              "description": "Personalized mobile views for attendees and benefit tracking.",
+              "children": [
+                {
+                  "name": "Neighbor ID",
+                  "group": "PGL",
+                  "type": "field",
+                  "description": "Unique family ID used to link benefit balances and transactions."
+                },
+                {
+                  "name": "Neighbor PIN",
+                  "group": "PGL",
+                  "type": "field",
+                  "description": "A secure PIN used for transaction authorization at the market."
+                },
+                {
+                  "name": "First and last name and DOB of all family members on the account",
+                  "group": "PGL",
+                  "type": "field",
+                  "description": "Personal details for identity verification and account-level tracking."
+                },
+                {
+                  "name": "CSA member or not",
+                  "group": "PGL",
+                  "type": "field",
+                  "description": "Indicates whether the attendee is currently enrolled in CSA distribution."
+                },
+                {
+                  "name": "Wallace member or not",
+                  "group": "PGL",
+                  "type": "field",
+                  "description": "Flags if the attendee is eligible for Wallace Bucks auto-load benefits."
+                }
+              ]
+            }
+          ]
+        }
+        
+        
+      ]
+    },
+    {
+      "name": "The PMDS Data Management Features ",
+      "group": "PGL",
+      "type": "folder",
+      "description": "Functional Specifications",
+      "children": [
+        {
+          "name": "Encryption",
+          "group": "PGL",
+          "type": "feature",
+          "description": "All sensitive data is encrypted both in transit and at rest to ensure privacy and regulatory compliance."
         },
         {
-          "name": "Vendor Stall Transaction (Token & QR Code)",
-          "group": "Market Attendee",
-          "type": "task",
-          "description": "Transactions made using tokens or QR codes at vendor stalls."
+          "name": "Access restriction",
+          "group": "PGL",
+          "type": "feature",
+          "description": "Granular access control ensures only authorized users can view or edit specific information."
         },
         {
-          "name": "Provide Feedback on Market Experience",
-          "group": "Market Attendee",
-          "type": "task",
-          "description": "Feedback collection to improve market services and experience."
+          "name": "Real-time updates",
+          "group": "PGL",
+          "type": "feature",
+          "description": "Changes in forms, dashboards, or mobile entries are reflected in real-time across the system."
         },
         {
-          "name": "Entertainment & Education",
-          "group": "Market Attendee",
-          "type": "task",
-          "description": "Activities provided for enrichment and awareness at the market."
+          "name": "Back-end time stamps",
+          "group": "PGL",
+          "type": "feature",
+          "description": "Every submission or update is automatically time-stamped for auditability."
+        },
+        {
+          "name": "Document uploading",
+          "group": "PGL",
+          "type": "feature",
+          "description": "Enables upload and storage of scanned or digital documents related to vendors, contracts, or operations."
+        },
+        {
+          "name": "ID tracking",
+          "group": "PGL",
+          "type": "feature",
+          "description": "Uses unique IDs (Vendor ID, Neighbor ID) to link all actions, submissions, and benefits to correct stakeholders."
+        }
+      ]
+    },
+    {
+      "name": "The PMDS Support",
+      "group": "PGL",
+      "type": "folder",
+      "description": "Resources to assist users in understanding, navigating, and using PMDS effectively.",
+      "children": [
+        {
+          "name": "General Technical Assistance Guidelines",
+          "group": "PGL",
+          "type": "folder",
+          "description": "Essential instructions and reference points for resolving issues and getting support.",
+          "children": [
+            {
+              "name": "Webpage to access Technical Assistance",
+              "group": "PGL",
+              "type": "link",
+              "description": "Click to access the Technical Assistance Portal.",
+              "url": "https://www.google.com/"
+            },
+            {
+              "name": "Summary of technical assistance types and timeframe",
+              "group": "PGL",
+              "type": "link",
+              "description": "Overview of different types of support offered and expected response time.",
+              "url": "https://www.google.com/"
+            },
+            {
+              "name": "Dos and Don't of Technical Assistance",
+              "group": "PGL",
+              "type": "link",
+              "description": "Best practices to follow and common pitfalls to avoid when requesting help.",
+              "url": "https://www.google.com/"
+            },
+            {
+              "name": "Before You Ask for Help",
+              "group": "PGL",
+              "type": "link",
+              "description": "Checklist and guidance for self-troubleshooting before reaching out for support.",
+              "url": "https://www.google.com/"
+            }
+          ]
+        },
+        {
+          "name": "Training Session",
+          "group": "PGL",
+          "type": "link",
+          "description": "Recorded or live sessions to help users understand system workflows and tools.",
+          "url": "https://www.google.com/"
+        },
+        {
+          "name": "User Guide",
+          "group": "PGL",
+          "type": "link",
+          "description": "Comprehensive written manual to assist users in understanding and using PMDS.",
+          "url": "https://www.google.com/"
+        },
+        {
+          "name": "Training video(s)",
+          "group": "PGL",
+          "type": "link",
+          "description": "Video walkthroughs of core features and processes in PMDS for visual learners.",
+          "url": "https://www.google.com/"
         }
       ]
     }
+    
+    
+    
+    
+    
   ]
 }
