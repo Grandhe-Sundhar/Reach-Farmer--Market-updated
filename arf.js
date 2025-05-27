@@ -97,7 +97,15 @@ function update(source) {
   })
   .text(function(d) { return d.name; })
   .style("fill", function(d) { return d.url ? "blue" : "black"; }) // Blue if it's a link
-  .style("text-decoration", function(d) { return d.url ? "underline" : "none"; }) // Underline if it's a link
+  .style("font-style", function(d) {
+  return (d.name === "Vendor Dashboard Set" || d.name === "Contract Dashboard Set") ? "italic" : "normal";
+})
+.style("text-decoration", function(d) {
+  if (d.url) return "underline";
+  if (d.name === "Vendor Dashboard Set" || d.name === "Contract Dashboard Set") return "underline dotted";
+  return "none";
+})
+ // Underline if it's a link
   .style("fill-opacity", 1e-6)
   .style("cursor", function(d) { return d.url ? "pointer" : "default"; })
   .on("click", function(d) {
