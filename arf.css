@@ -46,3 +46,15 @@ path.link {
   stroke: #ccc;
   stroke-width: 1px;
 }
+
+
+#body {
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+}
+
+svg {
+    width: 2000px; /* Make larger */
+    height: 2000px;
+}
