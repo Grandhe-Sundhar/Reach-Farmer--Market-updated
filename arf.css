@@ -84,7 +84,9 @@ path.link {
 }
 
 svg {
-    width: 5000px; /* Make larger */
-    height: 2000px;
+    width: 100%;
+    height: auto;
+    max-width: 1200px;
     display: block;
 }
+
