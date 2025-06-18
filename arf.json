@@ -121,216 +121,16 @@
           "description": "Forms used to collect, submit, and manage data from vendors, managers, and attendees."
         },
         {
-          "name": "Dashboards Sets and Dashboards",
+          "name": "Database",
           "group": "PGL",
-          "type": "folder",
-          "description": "Visual analytics and report interfaces for various user groups.",
-          "children": [
-            {
-              "name": "Shared Dashboard Set",
-              "group": "PGL",
-              "type": "folder",
-              "description": "Dashboards shared across users for general reporting and status overview.",
-              "children": [
-                {
-                  "name": "Benefit Utilization Dashboard",
-                  "group": "PGL",
-                  "type": "dashboard",
-                  "description": "Displays data on how benefits such as SNAP are being utilized across the market."
-                },
-                {
-                  "name": "Market Attendance Dashboard",
-                  "group": "PGL",
-                  "type": "dashboard",
-                  "description": "Visualizes attendance patterns of various market participants over time."
-                },
-                {
-                  "name": "General Dashboard",
-                  "group": "PGL",
-                  "type": "dashboard",
-                  "description": "A summary view with key metrics for overall market performance."
-                },
-                {
-                  "name": "Invoice and Remittance Dashboard",
-                  "group": "PGL",
-                  "type": "dashboard",
-                  "description": "Tracks invoices submitted and payments made to vendors and funders."
-                },
-                {
-                  "name": "Market Sales Dashboard",
-                  "group": "PGL",
-                  "type": "dashboard",
-                  "description": "Breaks down sales figures by vendor, product type, and payment method."
-                },
-                {
-                  "name": "Vendor Information Dashboard",
-                  "group": "PGL",
-                  "type": "dashboard",
-                  "description": "Displays contact, participation, and history information for vendors."
-                }
-              ]
-            },
-            
-            {
-              "name": "Contract Dashboard Set",
-              "group": "PGL",
-              "type": "folder",
-              "description": "Dashboards specific to contract performance and metrics reporting.",
-              "children": [
-                {
-                  "name": "Funder Invoice and Remittance Dashboard",
-                  "group": "Funders",
-                  "type": "dashboard",
-                  "description": "Tracks funder-specific invoicing and remittance activities."
-                },
-                {
-                  "name": "REACH-PGL Contract Dashboard",
-                  "group": "Funders",
-                  "type": "dashboard",
-                  "description": "Monitors contract milestones, deliverables, and metrics for REACH and PGL."
-                },
-                {
-                  "name": "CSA Dashboard",
-                  "group": "PGL",
-                  "type": "dashboard",
-                  "description": "Tracks participation and distribution metrics for the Community Supported Agriculture program."
-                }
-              ]
-            }
-            ,
-            {
-              "name": "Vendor Dashboard Set",
-              "group": "Vendors",
-              "type": "folder",
-              "description": "Dashboards tailored for vendor-facing metrics and internal PGL tracking needs.",
-              "children": [
-                {
-                  "name": "Item Sales Dashboard",
-                  "group": "Vendors",
-                  "type": "dashboard",
-                  "description": "Tracks quantity and type of items sold by vendors at each market."
-                },
-                {
-                  "name": "PGL Personnel Dashboard",
-                  "group": "PGL",
-                  "type": "dashboard",
-                  "description": "Displays information about PGL staff assignments, hours, and roles per market day."
-                },
-                {
-                  "name": "All PGL Contracts Dashboard",
-                  "group": "PGL",
-                  "type": "dashboard",
-                  "description": "Aggregates and tracks all contracts PGL is involved in across different programs and funders."
-                },
-                {
-                  "name": "Inventory Dashboard",
-                  "group": "Vendors",
-                  "type": "dashboard",
-                  "description": "Monitors current inventory levels and supply chain status for vendor goods."
-                }
-              ]
-            }
-            
-          ]
-        }
-      ]
-    },
-    {
-      "name": "PMDS Use Features ",
-      "group": "PGL",
-      "type": "folder",
-      "description": "Non-functional Specifications",
-      "children": [
+          "type": "component",
+          "description": "Centralized repository where all market-related data (users, vendors, transactions) is stored and retrieved."
+        },
         {
-          "name": "Notifications",
+          "name": "Unique IDs",
           "group": "PGL",
-          "type": "feature",
-          "description": "Supports communication alerts and reminders for users of the system.",
-          "children": [
-            {
-              "name": "Types of Notifications",
-              "group": "PGL",
-              "type": "category",
-              "description": "Different delivery channels for sending alerts.",
-              "children": [
-                {
-                  "name": "Email based",
-                  "group": "PGL",
-                  "type": "mode",
-                  "description": "Notifications sent to users via email for confirmations, updates, and reminders."
-                },
-                {
-                  "name": "Text based",
-                  "group": "PGL",
-                  "type": "mode",
-                  "description": "SMS notifications sent to users’ mobile devices for quick alerts."
-                }
-              ]
-            },
-            {
-              "name": "Recipients of Notifications",
-              "group": "PGL",
-              "type": "category",
-              "description": "Defines who receives which types of notifications.",
-              "children": [
-                {
-                  "name": "PGL",
-                  "group": "PGL",
-                  "type": "recipient",
-                  "description": "Notifications targeted at market managers and administrative staff.",
-                  "children": [
-                    {
-                      "name": "CSA opening (email or text)",
-                      "group": "PGL",
-                      "type": "notification",
-                      "description": "Notifies when the CSA (Community Supported Agriculture) program opens."
-                    },
-                    {
-                      "name": "New vendor request submission (email or text)",
-                      "group": "PGL",
-                      "type": "notification",
-                      "description": "Alert sent when a new vendor registration is submitted."
-                    },
-                    {
-                      "name": "(include all – see Sid's Notification list)",
-                      "group": "PGL",
-                      "type": "notification",
-                      "description": "Placeholder to incorporate all additional notifications outlined in Sid’s list."
-                    }
-                  ]
-                },
-                {
-                  "name": "Vendor",
-                  "group": "Vendors",
-                  "type": "recipient",
-                  "description": "Notifications related to participation, transactions, or schedules.",
-                  "children": [
-                    {
-                      "name": "Outstanding documents due (email or text)",
-                      "group": "Vendors",
-                      "type": "notification",
-                      "description": "Reminds vendors to submit pending documentation."
-                    }
-                  ]
-                },
-                {
-                  "name": "Funder",
-                  "group": "Funders",
-                  "type": "recipient",
-                  "description": "Updates on reports, invoices, or funding milestones.",
-                  "children": [
-                    {
-                      "name": "Reminder to submit payment remittance form (email)",
-                      "group": "Funders",
-                      "type": "notification",
-                      "description": "Reminds funders to submit the remittance form via email."
-                    }
-                  ]
-                }
-              ]
-            }
-            
-          ]
+          "type": "component",
+          "description": "ID system (e.g., Vendor ID, Neighbor ID) used for linking data entries to specific stakeholders."
         },
         {
           "name": "Mobile Wallet",
@@ -431,6 +231,129 @@
           ]
         },
         {
+          "name": "Dashboards",
+          "group": "PGL",
+          "type": "folder",
+          "description": "Visual analytics and report interfaces for various user groups.",
+          "children": [
+            {
+              "name": "Shared Dashboard Set",
+              "group": "PGL",
+              "type": "folder",
+              "description": "Dashboards shared across users for general reporting and status overview.",
+              "children": [
+                {
+                  "name": "Benefit Utilization Dashboard",
+                  "group": "PGL",
+                  "type": "dashboard",
+                  "description": "Displays data on how benefits such as SNAP are being utilized across the market."
+                },
+                {
+                  "name": "Market Attendance Dashboard",
+                  "group": "PGL",
+                  "type": "dashboard",
+                  "description": "Visualizes attendance patterns of various market participants over time."
+                },
+                {
+                  "name": "General Dashboard",
+                  "group": "PGL",
+                  "type": "dashboard",
+                  "description": "A summary view with key metrics for overall market performance."
+                },
+                {
+                  "name": "Invoice and Remittance Dashboard",
+                  "group": "PGL",
+                  "type": "dashboard",
+                  "description": "Tracks invoices submitted and payments made to vendors and funders."
+                },
+                {
+                  "name": "Market Sales Dashboard",
+                  "group": "PGL",
+                  "type": "dashboard",
+                  "description": "Breaks down sales figures by vendor, product type, and payment method."
+                },
+                {
+                  "name": "Vendor Information Dashboard",
+                  "group": "PGL",
+                  "type": "dashboard",
+                  "description": "Displays contact, participation, and history information for vendors."
+                }
+              ]
+            },
+            
+            {
+              "name": "Contract Dashboard Set\n(forthcoming)",
+              "group": "PGL",
+              "type": "folder",
+              "description": "Dashboards specific to contract performance and metrics reporting.",
+              "children": [
+                {
+                  "name": "Funder Invoice and Remittance Dashboard",
+                  "group": "Funders",
+                  "type": "dashboard",
+                  "description": "Tracks funder-specific invoicing and remittance activities."
+                },
+                {
+                  "name": "REACH-PGL Contract Dashboard",
+                  "group": "Funders",
+                  "type": "dashboard",
+                  "description": "Monitors contract milestones, deliverables, and metrics for REACH and PGL."
+                },
+                {
+                  "name": "CSA Dashboard",
+                  "group": "PGL",
+                  "type": "dashboard",
+                  "description": "Tracks participation and distribution metrics for the Community Supported Agriculture program."
+                }
+              ]
+            }
+            ,
+            {
+              "name": "Vendor Dashboard Set\n(forthcoming)",
+              "group": "Vendors",
+              "type": "folder",
+              "description": "Dashboards tailored for vendor-facing metrics and internal PGL tracking needs.",
+              "children": [
+                {
+                  "name": "Item Sales Dashboard",
+                  "group": "Vendors",
+                  "type": "dashboard",
+                  "description": "Tracks quantity and type of items sold by vendors at each market."
+                },
+                {
+                  "name": "PGL Personnel Dashboard",
+                  "group": "PGL",
+                  "type": "dashboard",
+                  "description": "Displays information about PGL staff assignments, hours, and roles per market day."
+                },
+                {
+                  "name": "All PGL Contracts Dashboard",
+                  "group": "PGL",
+                  "type": "dashboard",
+                  "description": "Aggregates and tracks all contracts PGL is involved in across different programs and funders."
+                },
+                {
+                  "name": "Inventory Dashboard",
+                  "group": "Vendors",
+                  "type": "dashboard",
+                  "description": "Monitors current inventory levels and supply chain status for vendor goods."
+                }
+              ]
+            }
+            
+          ]
+        }
+      ]
+    },
+    
+    {
+      "name": "Core Functionalities ",
+      "group": "PGL",
+      "type": "folder",
+      "description": "Other core functionalities for usage",
+      "children": [
+
+        {
           "name": "Mobile App Interfaces ",
           "group": "PGL",
           "type": "feature",
@@ -495,17 +418,143 @@
               ]
             }
           ]
-        }
-        
-        
-      ]
-    },
-    {
-      "name": "The PMDS Data Management Features ",
-      "group": "PGL",
-      "type": "folder",
-      "description": "Functional Specifications",
-      "children": [
+        },
+        {
+          "name": "Notifications",
+          "group": "PGL",
+          "type": "feature",
+          "description": "Supports communication alerts and reminders for users of the system.",
+          "children": [
+            
+                {
+                  "name": "PGL",
+                  "group": "PGL",
+                  "type": "recipient",
+                  "description": "Notifications targeted at market managers and administrative staff.",
+                  "children": [
+                    {
+                      "name": "Three or more consecutive market attendance days below monthly average",
+                      "type": "notification",
+                      "description": "Email + SMS"
+                    },
+                    {
+                      "name": "Three or more consecutive market sales days below monthly average (any payment type)",
+                      "type": "notification",
+                      "description": "Email + SMS"
+                    },
+                    {
+                      "name": "Vendor has ≥1 overdue document (starts 1 week post due, repeats every 3 days)",
+                      "type": "notification",
+                      "description": "Email + SMS"
+                    },
+                    {
+                      "name": "Vendor absent from market >1 day",
+                      "type": "notification",
+                      "description": "Email + SMS"
+                    },
+                    {
+                      "name": "Low expected attendance (<50% vendors) for next market",
+                      "type": "notification",
+                      "description": "Email + SMS"
+                    },
+                    {
+                      "name": "Rental equipment returned damaged or not returned",
+                      "type": "notification",
+                      "description": "Email + SMS"
+                    },
+                    {
+                      "name": "System maintenance down / in progress",
+                      "type": "notification",
+                      "description": "Email + Wix site banner"
+                    },
+                    {
+                      "name": "CSA drop (if any enrolled CSA member misses 2 consecutive CSA pick-ups)",
+                      "type": "notification",
+                      "description": "Email"
+                    },
+                    {
+                      "name": "New vendor application submitted through vendor request form",
+                      "type": "notification",
+                      "description": "Email"
+                    },
+                    {
+                      "name": "New vendor documents uploaded through vendor document upload form",
+                      "type": "notification",
+                      "description": "Email"
+                    },
+                    {
+                      "name": "If vendor has any missing forms from the document upload form (beginning 3 days after due)",
+                      "type": "notification",
+                      "description": "Email"
+                    },
+                    {
+                      "name": "CSA cap reached",
+                      "type": "notification",
+                      "description": "Email and portal notification"
+                    }
+                  ]
+                },
+                {
+                  "name": "Vendor",
+                  "group": "Vendors",
+                  "type": "recipient",
+                  "description": "Notifications related to participation, transactions, or schedules.",
+                  "children": [
+                    {
+                      "name": "Vendor has ≥1 overdue document (starts 1 week post due, repeats every 3 days)",
+                      "type": "notification",
+                      "description": "Email + SMS"
+                    },
+                    
+                    {
+                      "name": "Rental equipment returned damaged or not returned",
+                      "type": "notification",
+                      "description": "Email + SMS"
+                    },
+                    {
+                      "name": "If vendor has any missing forms from the document upload form (beginning 3 days after due)",
+                      "type": "notification",
+                      "description": "Email"
+                    }
+                  ]
+                },
+                {
+                  "name": "Funder",
+                  "group": "Funders",
+                  "type": "recipient",
+                  "description": "Updates on reports, invoices, or funding milestones.",
+                  "children": [
+                    {
+                      "name": "Three or more consecutive market attendance days below monthly average",
+                      "type": "notification",
+                      "description": "Email + SMS"
+                    },
+                    {
+                      "name": "Three or more consecutive market sales days below monthly average (any payment type)",
+                      "type": "notification",
+                      "description": "Email + SMS"
+                    },
+                    {
+                      "name": "Vendor has ≥1 overdue document (starts 1 week post due, repeats every 3 days)",
+                      "type": "notification",
+                      "description": "Email + SMS"
+                    },
+                    {
+                      "name": "Low expected attendance (<50% vendors) for next market",
+                      "type": "notification",
+                      "description": "Email + SMS"
+                    },
+                    {
+                      "name": "System maintenance down / in progress",
+                      "type": "notification",
+                      "description": "Email + Wix site banner"
+                    }
+                  ]
+                
+              
+            }
+          ]
+        },            
         {
           "name": "Encryption",
           "group": "PGL",
@@ -534,7 +583,7 @@
           "name": "Document uploading",
           "group": "PGL",
           "type": "feature",
-          "description": "Enables upload and storage of scanned or digital documents related to vendors, contracts, or operations."
+          "description": "Use this for uploading vendor registration related documents in the vendor market , vendor request and the document uploading form"
         },
         {
           "name": "ID tracking",
@@ -550,42 +599,7 @@
       "type": "folder",
       "description": "Resources to assist users in understanding, navigating, and using PMDS effectively.",
       "children": [
-        {
-          "name": "General Technical Assistance Guidelines",
-          "group": "PGL",
-          "type": "folder",
-          "description": "Essential instructions and reference points for resolving issues and getting support.",
-          "children": [
-            {
-              "name": "Webpage to access Technical Assistance",
-              "group": "PGL",
-              "type": "link",
-              "description": "Click to access the Technical Assistance Portal.",
-              "url": "https://www.google.com/"
-            },
-            {
-              "name": "Summary of technical assistance types and timeframe",
-              "group": "PGL",
-              "type": "link",
-              "description": "Overview of different types of support offered and expected response time.",
-              "url": "https://www.google.com/"
-            },
-            {
-              "name": "Dos and Don't of Technical Assistance",
-              "group": "PGL",
-              "type": "link",
-              "description": "Best practices to follow and common pitfalls to avoid when requesting help.",
-              "url": "https://www.google.com/"
-            },
-            {
-              "name": "Before You Ask for Help",
-              "group": "PGL",
-              "type": "link",
-              "description": "Checklist and guidance for self-troubleshooting before reaching out for support.",
-              "url": "https://www.google.com/"
-            }
-          ]
-        },
+        
         {
           "name": "Training Session",
           "group": "PGL",
@@ -606,7 +620,20 @@
           "type": "link",
           "description": "Video walkthroughs of core features and processes in PMDS for visual learners.",
           "url": "https://www.google.com/"
+        },
+        {
+          "name": "End of Market",
+          "type": "dashboard",
+          "url": "https://ucincinnati.qualtrics.com/jfe/form/SV_7QKayb7IDVgMo8m",
+          "description": "End of market form for closure documentation."
+        },
+        {
+          "name": "End of Season",
+          "type": "dashboard",
+          "url": "https://ucincinnati.qualtrics.com/jfe/form/SV_0VWDyR5qbwa9EfI",
+          "description": "End of season report submission form."
         }
+        
       ]
     }
     

@@ -1,5 +1,24 @@
-var margin = [20, 120, 20, 200],
-    width = 1280 - margin[1] - margin[3],
+let currentLang = 'en-US';  // Default language
+
+function setLanguage(lang) {
+  currentLang = lang;
+}
+
+function speak(text) {
+  const synth = window.speechSynthesis;
+  const utter = new SpeechSynthesisUtterance(text);
+  utter.lang = currentLang;
+  utter.pitch = 1;
+  utter.rate = 1;
+  utter.volume = 1;
+  synth.cancel(); // Stop any current speech
+  synth.speak(utter);
+}
+
+
+
+var margin = [20, 120, 20, 400],
+    width = 5000 - margin[1] - margin[3],
     height = 1000 - margin[0] - margin[2],
     i = 0,
     duration = 1250,
@@ -9,6 +28,8 @@ var tree = d3.layout.tree().size([height, width]);
 
 var diagonal = d3.svg.diagonal()
     .projection(function(d) { return [d.y, d.x]; });
+
+
 
 var vis = d3.select("#body").append("svg:svg")
     .attr("width", width + margin[1] + margin[3])
@@ -48,7 +69,7 @@ function update(source) {
   var nodes = tree.nodes(root).reverse();
 
   // Assign X spacing per level
-  nodes.forEach(function(d) { d.y = d.depth * 280; });
+  nodes.forEach(function(d) { d.y = d.depth * 600; });
 
   var node = vis.selectAll("g.node")
       .data(nodes, function(d) { return d.id || (d.id = ++i); });
@@ -60,25 +81,15 @@ function update(source) {
         return "translate(" + source.y0 + "," + source.x0 + ")";
       })
       .on("click", function(d) {
+        trackEvent("click", d.name);
+        speak(currentLang === 'es-ES' ? `Has hecho clic en ${d.name}` : `You clicked on ${d.name}`);
         toggle(d);
         update(d);
 
       
       })
 
-      .on("mouseover", function(d) {
-        tooltip.style("display", "block")
-               .html("<strong>" + d.name + ":</strong><br/>" + (d.description || ""))
-               .style("left", (d3.event.pageX + 15) + "px")
-               .style("top", (d3.event.pageY + 15) + "px");
-      })
-      .on("mousemove", function(d) {
-        tooltip.style("left", (d3.event.pageX + 15) + "px")
-               .style("top", (d3.event.pageY + 15) + "px");
-      })
-      .on("mouseout", function() {
-        tooltip.style("display", "none");
-      });
+     
       
 
   // Circle for each node
@@ -108,49 +119,98 @@ function update(source) {
             
 
     // Node text (password-protected hyperlink appearance)
-    nodeEnter.append("svg:text")
-    .attr("x", function(d) { return d.children || d._children ? -10 : 10; })
-    .attr("dy", ".35em")
-    .attr("text-anchor", function(d) {
-      return d.children || d._children ? "end" : "start";
-    })
-    .text(function(d) { return d.name; })
-    .style("fill", function(d) { return d.url ? "blue" : "black"; })
-    .style("font-style", function(d) {
-      return (d.name === "Vendor Dashboard Set" || d.name === "Contract Dashboard Set") ? "italic" : "normal";
-    })
-    .style("text-decoration", function(d) {
-      if (d.url) return "underline";
-      if (d.name === "Vendor Dashboard Set" || d.name === "Contract Dashboard Set") return "underline dotted";
-      return "none";
-    })
-    .style("font-weight", function(d) {
-      return (d.children || d._children) ? "bold" : "normal";
-    })
-    .style("fill-opacity", 1e-6)
-    .style("cursor", function(d) { return d.url ? "pointer" : "default"; })
-    .on("click", function(d) {
-      if (d.url) {
-        var input = prompt("Enter password to access this link:");
-        if (input === "123") {
-          window.open(d.url, "_blank");
-        } else {
-          alert("Incorrect password.");
-        }
-        d3.event.stopPropagation();
-      } else {
-        toggle(d);
-        update(d);
-      }
-    });
-  
+        nodeEnter.append("svg:text")
+        .attr("x", function(d) { return d.children || d._children ? -10 : 10; })
+        .attr("dy", ".35em")
+        .attr("text-anchor", function(d) {
+          return d.children || d._children ? "end" : "start";
+        })
+        .each(function(d) {
+          var lines = d.name.split("\n");
+          for (var i = 0; i < lines.length; i++) {
+            d3.select(this)
+              .append("tspan")
+              .text(lines[i])
+              .attr("x", 0)
+              .attr("dy", i === 0 ? "0em" : "1.2em");
+          }
+        })
+        .style("fill", function(d) { return d.url ? "blue" : "black"; })
+        .style("font-style", "normal")
+        .style("text-decoration", "none")
+        .style("font-weight", "normal")
+        .style("fill-opacity", 1e-6)
+        .style("cursor", function(d) { return d.url ? "pointer" : "default"; })
+        .on("click", function(d) {
+          if (d.url) {
+            var input = prompt("Enter password to access this link:");
+            if (input === "PMDS2025!") {
+              window.open(d.url, "_blank");
+            } else {
+              alert("Incorrect password.");
+            }
+            d3.event.stopPropagation();
+          } else {
+            toggle(d);
+            update(d);
+          }
+        });
+
+
+
+        nodeEnter.each(function(d) {
+          const group = d3.select(this);
+        
+          requestAnimationFrame(() => {
+            const textNode = group.select("text").node();
+            if (!textNode) return;
+        
+            const bbox = textNode.getBBox(); // bounding box of entire label
+        
+            const iconGroup = group.append("g")
+              .attr("class", "info-button")
+              .attr("transform", `translate(${bbox.x + bbox.width + 10}, ${bbox.y})`);
+        
+              iconGroup.append("circle")
+  .attr("r", 6)
+  .style("fill", "green") // Or any other color
+  .style("stroke", "#0d47a1")
+  .style("stroke-width", 1.5);
+
+iconGroup.append("text")
+  .attr("text-anchor", "middle")
+  .attr("dy", ".35em")
+  .style("fill", "white")
+  .style("font-size", "10px")
+  .text("i");
+
+            
+        
+            iconGroup.on("click", function() {
+              tooltip.style("display", "block")
+                .html("<strong>" + d.name + ":</strong><br/>" + (d.description || ""))
+                .style("left", (d3.event.pageX + 15) + "px")
+                .style("top", (d3.event.pageY + 15) + "px");
+              d3.event.stopPropagation();
+            });
+          });
+        });
+    // Hide tooltip when clicking outside
+      d3.select("body").on("click", function() {
+        tooltip.style("display", "none");
+      });
+
+
+
+      
+        
+        
+
+        
 
 
   // Tooltip for description
-  nodeEnter.append("svg:title")
-    .text(function(d) {
-      return d.description || "";
-    });
+  
 
     
 
@@ -242,11 +302,37 @@ link.enter().insert("svg:path", "g")
 
 // Toggle function
 function toggle(d) {
-  if (d.children) {
-    d._children = d.children;
-    d.children = null;
-  } else {
+  // Collapse all nodes
+  collapseAll(root);
+
+  // Expand path to the clicked node
+  expandPath(d);
+
+  // Expand the clicked node itself (if it has children)
+  if (d._children) {
     d.children = d._children;
     d._children = null;
   }
 }
+
+function collapseAll(node) {
+  if (node.children) {
+    node.children.forEach(collapseAll);
+    node._children = node.children;
+    node.children = null;
+  }
+  if (node._children) {
+    node._children.forEach(collapseAll);
+  }
+}
+
+function expandPath(d) {
+  if (d.parent) {
+    expandPath(d.parent);
+  }
+  if (d._children) {
+    d.children = d._children;
+    d._children = null;
+  }
+}
+
