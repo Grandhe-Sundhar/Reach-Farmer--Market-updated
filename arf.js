@@ -31,12 +31,10 @@ var diagonal = d3.svg.diagonal()
 
 
 
-var svg = d3.select("#body").append("svg")
-  .attr("preserveAspectRatio", "xMidYMid meet")
-  .attr("viewBox", `0 0 ${width + margin[1] + margin[3]} ${height + margin[0] + margin[2]}`)
-  .classed("svg-content", true);
-
-var vis = svg.append("g")
+var vis = d3.select("#body").append("svg:svg")
+  .attr("width", width + margin[1] + margin[3])
+  .attr("height", height + margin[0] + margin[2])
+  .append("svg:g")
   .attr("transform", "translate(" + margin[3] + "," + margin[0] + ")");
 
 
