@@ -13,6 +13,19 @@
 
     <!-- Inline Styling -->
     <style>
+      html {
+    zoom: 67%; /* Works in Chrome, Edge */
+  }
+
+  @media not all and (min-resolution: 0.001dpcm) {
+    @supports (-moz-appearance: none) {
+      body {
+        transform: scale(0.67);
+        transform-origin: top left;
+        width: 149.25%; /* 100 / 0.67 */
+      }
+    }
+  }
       body {
         font-family: 'Georgia', serif;
         background-color: #f5f7fa;
