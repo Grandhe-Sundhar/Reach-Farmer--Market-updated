@@ -17,9 +17,9 @@ function speak(text) {
 
 
 
-var margin = [20, 120, 20, 400],
-    width = 5000 - margin[1] - margin[3],
-    height = 1000 - margin[0] - margin[2],
+var margin = [20, 60, 20, 60],
+    width = 1200 - margin[1] - margin[3],
+    height = 600 - margin[0] - margin[2],
     i = 0,
     duration = 1250,
     root;
