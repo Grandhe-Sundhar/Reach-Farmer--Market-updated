@@ -601,25 +601,11 @@
       "children": [
         
         {
-          "name": "Training Session",
-          "group": "PGL",
-          "type": "link",
-          "description": "Recorded or live sessions to help users understand system workflows and tools."
-          
-        },
-        {
           "name": "User Guide",
           "group": "PGL",
           "type": "link",
           "description": "Comprehensive written manual to assist users in understanding and using PMDS.",
           "url": "https://qrfy.io/p/w0zNY5p27r?required_password=true"
-        },
-        {
-          "name": "Training video(s)",
-          "group": "PGL",
-          "type": "link",
-          "description": "Video walkthroughs of core features and processes in PMDS for visual learners."
-          
         },
         {
           "name": "End of Market",
