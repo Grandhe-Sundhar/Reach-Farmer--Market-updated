@@ -435,37 +435,37 @@
                     {
                       "name": "Three or more consecutive market attendance days below monthly average",
                       "type": "notification",
-                      "description": "Email + SMS"
+                      "description": "Email"
                     },
                     {
                       "name": "Three or more consecutive market sales days below monthly average (any payment type)",
                       "type": "notification",
-                      "description": "Email + SMS"
+                      "description": "Email"
                     },
                     {
                       "name": "Vendor has ≥1 overdue document (starts 1 week post due, repeats every 3 days)",
                       "type": "notification",
-                      "description": "Email + SMS"
+                      "description": "Email"
                     },
                     {
                       "name": "Vendor absent from market >1 day",
                       "type": "notification",
-                      "description": "Email + SMS"
+                      "description": "Email"
                     },
                     {
                       "name": "Low expected attendance (<50% vendors) for next market",
                       "type": "notification",
-                      "description": "Email + SMS"
+                      "description": "Email"
                     },
                     {
                       "name": "Rental equipment returned damaged or not returned",
                       "type": "notification",
-                      "description": "Email + SMS"
+                      "description": "Email"
                     },
                     {
                       "name": "System maintenance down / in progress",
                       "type": "notification",
-                      "description": "Email + Wix site banner"
+                      "description": "Email"
                     },
                     {
                       "name": "CSA drop (if any enrolled CSA member misses 2 consecutive CSA pick-ups)",
@@ -503,13 +503,13 @@
                     {
                       "name": "Vendor has ≥1 overdue document (starts 1 week post due, repeats every 3 days)",
                       "type": "notification",
-                      "description": "Email + SMS"
+                      "description": "Email"
                     },
                     
                     {
                       "name": "Rental equipment returned damaged or not returned",
                       "type": "notification",
-                      "description": "Email + SMS"
+                      "description": "Email"
                     },
                     {
                       "name": "If vendor has any missing forms from the document upload form (beginning 3 days after due)",
@@ -527,27 +527,27 @@
                     {
                       "name": "Three or more consecutive market attendance days below monthly average",
                       "type": "notification",
-                      "description": "Email + SMS"
+                      "description": "Email"
                     },
                     {
                       "name": "Three or more consecutive market sales days below monthly average (any payment type)",
                       "type": "notification",
-                      "description": "Email + SMS"
+                      "description": "Email"
                     },
                     {
                       "name": "Vendor has ≥1 overdue document (starts 1 week post due, repeats every 3 days)",
                       "type": "notification",
-                      "description": "Email + SMS"
+                      "description": "Email"
                     },
                     {
                       "name": "Low expected attendance (<50% vendors) for next market",
                       "type": "notification",
-                      "description": "Email + SMS"
+                      "description": "Email"
                     },
                     {
                       "name": "System maintenance down / in progress",
                       "type": "notification",
-                      "description": "Email + Wix site banner"
+                      "description": "Email"
                     }
                   ]
                 
