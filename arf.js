@@ -5,6 +5,9 @@ function setLanguage(lang) {
 }
 
 function speak(text) {
+  const isVoiceOn = document.getElementById("voice-toggle")?.checked;
+  if (!isVoiceOn) return;
+
   const synth = window.speechSynthesis;
   const utter = new SpeechSynthesisUtterance(text);
   utter.lang = currentLang;
