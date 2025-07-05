@@ -1,4 +1,6 @@
 let currentLang = 'en-US';  // Default language
+let voiceNarrationEnabled = false; // default is OFF
+
 
 function setLanguage(lang) {
   currentLang = lang;
