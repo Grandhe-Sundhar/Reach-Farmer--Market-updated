@@ -89,7 +89,9 @@ function update(source) {
       })
       .on("click", function(d) {
         trackEvent("click", d.name);
-        speak(currentLang === 'es-ES' ? `Has hecho clic en ${d.name}` : `You clicked on ${d.name}`);
+        if (voiceNarrationEnabled) {
+      speak(currentLang === 'es-ES' ? `Has hecho clic en ${d.name}` : `You clicked on ${d.name}`);
+      }
         toggle(d);
         update(d);
 
